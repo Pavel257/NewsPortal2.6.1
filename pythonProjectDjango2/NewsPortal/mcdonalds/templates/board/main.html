@@ -1,0 +1,49 @@
+<html>
+<head>
+    <title> Order board</title>
+</head>
+{% load static %}
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet"/>
+<body background="{% static 'images/3.jpg' %}">
+
+<h2 style="text-align:center;"><a href="http://127.0.0.1:8000/news/">Перейти на главную страницу</a></h2>
+<table>
+    <tr>
+        <td>
+            <h4><em><span style="color: #008000;">Название продукта</span></em></h4>
+            <hr/>
+        </td>
+        <td>
+            <h4><em><span style="color: #008000;">Стоимость</span></em></h4>
+            <hr/>
+        </td>
+
+    </tr>
+    {% for prod in product %}
+    <tr>
+        <td>
+            {{ prod.name }}
+            <hr/>
+        </td>
+        <td>
+            {{ prod.price }}
+            <hr/>
+        </td>
+
+    </tr>
+    {% endfor %}
+</table>
+
+<div>
+    <h2 style="text-align:center;"><a href="/">Order board</a></h2>
+</div>
+<div style="text-align:center;">
+    <button>
+        <a href="{% url 'new_order'%}"> Добавить заказ </a>
+    </button>
+</div>
+<br>
+<br>
+</html>
+{% block content %}
+{% endblock %}

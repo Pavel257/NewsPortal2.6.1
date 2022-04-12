@@ -1,0 +1,14 @@
+{% extends 'flatpages/default.html' %}
+{% load i18n %}
+{% block title %} Add News {% endblock title %}
+
+{% block content %}
+<h3>{% trans 'Создать новость или статью' %}</h3>
+<form method="POST">
+
+    {% csrf_token %}
+    {{ form.as_p }} <!-- Теперь нам нужна только готовая форма и кнопка -->
+
+    <input type="submit" value="{% trans 'Создать' %}">
+</form>
+{% endblock content %}

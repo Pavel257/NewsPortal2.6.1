@@ -1,0 +1,53 @@
+{% extends 'flatpages/default.html' %}
+{% load i18n %}
+{% block title %}{% endblock title %}
+
+{% block content %}
+
+<h1><span style="color: #ff3300;">{% for new in post.postCategory.all %}
+    {{ new|title }}
+    {% endfor %}</span></h1>
+<hr size="5" style="color: #0099ff;"/>
+<h3>{{ post.title }}</h3>
+<hr  size="4" style="color: #9400D3;" />
+
+<br>
+{{ post.text|linebreaks }}
+<hr/>
+
+<h5><small>{% trans 'Автор' %}:&nbsp; </small> {{ post.author|title }}</h5>
+<small>{{ post.dateCreation }}</small>
+<hr/>
+<small>{% trans 'Рейтинг статьи' %}: {{ post.rating }}</small>
+{% for category in post.postCategory.all %}
+<hr>
+{{ category|title }}
+{% if is_not_subscribe %}
+
+<button><a href="{% url 'subscribed' category.id %}">{% trans 'Подписка' %}</a></button>
+
+{% endif %}
+
+{% if not is_subscribe %}
+<button><a href="{% url 'subscribed' category.id %}">{% trans 'Отписка' %}</a></button>
+{% endif %}
+
+{% endfor %}
+<hr>
+<br>
+<a href="{% url 'news_update' post.id %}"><u><strong><span style="color: #33ff33;">{% trans 'Редактировать' %}</span></strong></u></a> /
+
+<a href="{% url 'news_delete' post.id %}"><u><strong><span style="color: #ff6600;">{% trans 'Удалить' %}</span></strong></u></a>
+
+<p style="color:#3399ff">
+    <marquee behavior="scroll" direction="left">{% trans 'Здесь могла бы быть Ваша реклама' %}!))</marquee>
+</p>
+
+
+<!--{% if is_not_subscribe %} fff {% endif %}-->
+<!--{% if not is_subscribe %}ggg{% endif %}-->
+
+
+{% endblock %}
+
+

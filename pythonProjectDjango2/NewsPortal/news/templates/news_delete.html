@@ -1,0 +1,53 @@
+{% extends 'flatpages/default.html' %}
+{% load i18n %}
+{% block title %} Delete News {% endblock title %}
+
+{% block content %}
+<h2>{% trans 'Вы действительно хотите удалить новость' %}?</h2>
+<table>
+    <tr>
+        <td>
+            <h4><em><span style="color: #008000;">{% trans 'Имя автора' %}</span></em></h4>
+            <hr/>
+        </td>
+        <td>
+            <h4><em><span style="color: #008000;">{% trans 'Рейтинг новости' %}</span></em></h4>
+            <hr/>
+        </td>
+        <td>
+            <h4><em><span style="color: #008000;">{% trans 'Категория' %}</span></em></h4>
+            <hr/>
+        </td>
+        <td>
+            <h4><em><span style="color: #008000;">{% trans 'Статья' %}</span></em></h4>
+            <hr/>
+
+        </td>
+        <td>
+            <h4><em><span style="color: #008000;">{% trans 'Дата публикации' %}</span></em></h4>
+            <hr/>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            {{ post.author|title }}
+        </td>
+        <td>
+            {{ post.rating }}
+        </td>
+        <td>
+            {{ post.postCategory }}
+        </td>
+        <td>
+            {{ post.text|truncatechars:128 }}
+        </td>
+    </tr>
+</table>
+
+<form method="POST">
+    {% csrf_token %}
+    <input type="submit" value="{% trans 'Удалить' %}"></form>
+{% endblock content %}
+
+
+

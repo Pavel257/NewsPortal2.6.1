@@ -1,0 +1,118 @@
+{% extends 'flatpages/default.html' %}
+{% load my_filters %}
+{% load i18n %}
+{% block title %} NewsSearch {% endblock title %}
+
+
+{% block content %}
+
+<h1><span style="color: #993300;">{% trans 'Поиск новостей' %}</span></h1>
+<hr size="5" style="color: #0099ff;"/>
+<br>
+
+
+<form method="GET">
+    {{ filter.form }} <!--Форму от фильтров за нас сделает django. А вот кнопку, увы придётся делать самому-->
+    <input type="submit" value="Найти">
+</form>
+<!--{% for post in filter.qs %}-->
+
+
+<!--{% endfor %}-->
+{% if Posts %}
+<table>
+    <tr>
+        <td>
+            <h4><em><span style="color: #008000;">{% trans 'Автор' %}</span></em></h4>
+            <hr/>
+        </td>
+
+        <td>
+            <h4><em><span style="color: #008000;">{% trans 'Категория' %}</span></em></h4>
+            <hr/>
+        </td>
+        <td>
+            <h4><em><span style="color: #008000;">{% trans 'Статья' %}</span></em></h4>
+            <hr/>
+        </td>
+        <td>
+            <h4><em><span style="color: #008000;">{% trans 'Дата' %}&nbsp;</span></em></h4>
+            <hr/>
+        </td>
+        <td>
+            <h4><em><span style="color: #008000;">{% trans 'Рейтинг' %}</span></em></h4>
+            <hr/>
+        </td>
+    </tr>
+    {% for news1 in Posts %}
+    <tr>
+        <td>
+            <h5>{{ news1.author|title }}</h5>
+            <!-- При нажатии на имя товара в таблице нас теперь будет перекидывать на страницу с самого товара -->
+<!--            <a href="{% url 'news_update' news1.id %}"><u><strong><span-->
+<!--                    style="color: #008000;">Редактировать</span></strong></u></a> &lt;!&ndash; добавим ссылку на редактирование товара&ndash;&gt;-->
+
+<!--            <a href="{% url 'news_delete' news1.id %}"><u><strong><span style="color: #ff6600;">Удалить</span></strong></u></a>-->
+            <!-- добавим ссылку на удаление товара-->
+
+
+        </td>
+
+        <td>
+            {% for new in news1.postCategory.all %}
+            <h5>{{ new|title }}</h5>
+            {% endfor %}
+
+        </td>
+        <td>
+             <h6><i><ins>{{ news1|title }}</ins></i></h6>
+            {{ news1.text|truncatewords:30|Censor }}
+            <p class="link-reed-post"><a href="{% url 'news_detail' news1.id %}">{% trans 'Читать статью' %}</a></p>
+            <hr size="4" style="color: 	#9400D3;" />
+
+        </td>
+        <td>
+            <small>{{ news1.dateCreation }}</small>
+
+        </td>
+         <td>
+            <small>{{ news1.rating }}</small>
+
+        </td>
+    </tr>
+    {% endfor %}
+{% else %}
+        <h2>{% trans 'Такой новости нет' %}!</h2>
+
+{% endif %}
+</table>
+<!-- Проверяем что поддерживается постраничный вывод -->
+{% if is_paginated %}
+
+<!-- Если доступна предыдущая страница, то даём ссылку на неё и самую первую страницу -->
+{% if page_obj.has_previous %}
+<a href="?page=1">{% trans 'Начало' %}</a>
+<a href="?page={{ page_obj.previous_page_number }}"><<<</a>
+{% endif %}
+
+<!-- Показываем только текущую страницу и ближайшие к ней, чтобы список не тянулся и не захламлял страницу -->
+{% for num in page_obj.paginator.page_range %}
+{% if page_obj.number == num %}
+<a>{{ num }}</a>
+{% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+<a href="?page={{ num }}">{{ num }}</a>
+{% endif %}
+{% endfor %}
+
+<!-- Если есть следующая страница, то даём ссылку на неё и на самую последнюю страницу -->
+{% if page_obj.has_next %}
+<a href="?page={{ page_obj.next_page_number }}">>>></a>
+<a href="?page={{ page_obj.paginator.num_pages }}">{% trans 'Конец' %}</a>
+{% endif %}
+{% endif %}
+<br>
+<hr>
+
+{% endblock content %}
+
+

@@ -1,0 +1,15 @@
+{% extends 'flatpages/default.html' %}
+ 
+{% block title %}
+{{ flatpage.title }}
+{% endblock title %}
+ 
+{% block content %}
+    <h2><i>{{ flatpage.content }}<i></i></h2>
+    <hr>
+    <h3>Kонтакты:</h3>
+{{ flatpage.content }}
+{% endblock content %}
+
+<!--{% load cache %} &lt;!&ndash; Загружаем кэширование &ndash;&gt;-->
+<!--{% cache 30 header %}--><!--{% endcache %}-->

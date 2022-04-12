@@ -1,0 +1,42 @@
+{% extends "main.html" %}
+{% load i18n %}
+{% load tz %}
+{% block content %}
+
+
+<h2 style="text-align:center;">{% trans 'Пользователь' %}: "{{request.user.username}}" - {% trans 'статус' %} {% if is_not_authors %} {% trans 'Пользователь' %} {% endif %} {% if is_authors %} {% trans 'Автор' %} {% endif %}</h2>
+<hr>
+<br>
+<h4 style="text-align:center;">{% trans 'Страница авторизованного пользователя' %}: "{{request.user.username}}"</h4>
+<br>
+<h4 style="text-align:center;">{% trans 'Добро пожаловать' %} "{{request.user.username}}" {% trans 'на новостной портал' %}. </h4>
+<br>
+<!--<div style="text-align:center;"> Здесь может содержаться персональная информация для каждого пользователя </div>-->
+
+ <p style="text-align:center;"><button> <a href="sign/logout/">{% trans 'Выйти' %}</a> </button>
+
+{% if is_not_premium %}
+<button> <a href="sign/upgrade/"> Хочу Premium!</a> </button>
+{% endif %}
+{% if is_not_authors %}
+<button> <a href="sign/become_author/">{% trans 'Хочу стать автором' %}!</a></button>
+{% endif %}
+{% if is_authors %}
+<button><a href="sign/not_author/">{% trans 'Хочу стать пользователем' %}!</a></button>
+{% endif %}
+
+<!-- {% get_current_timezone as TIME_ZONE %}-->
+<!--<form action="" method="POST">-->
+<!--    {% csrf_token %}-->
+<!--    <label for="timezone">Time zone:</label>-->
+<!--    <select name="timezone">-->
+<!--        {% for tz in timezones %}-->
+<!--        <option value="{{ tz }}" {% if tz == TIME_ZONE %} selected{% endif %}>{{ tz }}</option>-->
+<!--        {% endfor %}-->
+<!--    </select>-->
+<!--    <input type="submit" value="Set">-->
+<!--</form>-->
+
+<!--{{ TIME_ZONE }} &lt;!&ndash; Отображает выбранный (текущий) часовой пояс  &ndash;&gt;-->
+<!--{{ current_time|timezone:TIME_ZONE }}-->
+<!--{% endblock %}-->

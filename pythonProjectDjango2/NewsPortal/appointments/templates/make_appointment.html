@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load i18n %}
+<html lang="en">
+<head>
+    {% load static %}
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet"/>
+    <meta charset="UTF-8">
+    <title>Запись на прием</title>
+</head>
+<body background="{% static 'images/9.jpg' %}">
+
+ <br>
+<h1 style="text-align:center;"><span style="color: #993300;">{% trans 'Запись на прием' %}</span></h1>
+<hr size="5" style="color: #0099ff;" />
+
+
+<form action="{% url 'appointments:make_appointment' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <p style="text-align: center;"><label for="client_name">{% trans 'Ваше имя' %}</label>
+     <input type="text" name="client_name">
+    <br>
+
+    <label for="message">{% trans 'Краткое описание проблемы' %}</label>
+    <input type="text" name="message">
+    <br>
+
+    <label for="date">{% trans 'Время приема' %}</label>
+    <input type="date" name="date">
+    <br>
+
+    <!--кнопка отправки данных-->
+    <input type="submit" value="{% trans 'Продолжить' %}">
+</form>
+
+<h5 style="text-align:center;"><a href="http://127.0.0.1:8000/news/">{% trans 'Перейти на главную страницу' %}</a></h5>
+</body>
+</html>
+
+<!---->
+<!--"-->
+<!--"-->

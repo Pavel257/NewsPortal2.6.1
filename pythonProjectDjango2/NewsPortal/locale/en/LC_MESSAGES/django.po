@@ -1,0 +1,266 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-12 02:02+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\appointments\templates\make_appointment.html:13
+msgid "Запись на прием"
+msgstr "Appointment"
+
+#: .\appointments\templates\make_appointment.html:20
+msgid "Ваше имя"
+msgstr "Your name"
+
+#: .\appointments\templates\make_appointment.html:24
+msgid "Краткое описание проблемы"
+msgstr "Brief description of the problem"
+
+#: .\appointments\templates\make_appointment.html:28
+msgid "Время приема"
+msgstr "Time of receipt"
+
+#: .\appointments\templates\make_appointment.html:33
+msgid "Продолжить"
+msgstr "Proceed"
+
+#: .\appointments\templates\make_appointment.html:36 .\templates\main.html:12
+msgid "Перейти на главную страницу"
+msgstr "Go to home page"
+
+#: .\news\filters.py:13
+msgid "Позже даты"
+msgstr "Later dates"
+
+#: .\news\filters.py:20
+msgid "Поиск по заголовкам статьи:"
+msgstr "Search by article titles"
+
+#: .\news\filters.py:21
+msgid "Заголовки не выбраны"
+msgstr "Headings not selected"
+
+#: .\news\filters.py:24 .\news\forms.py:14
+msgid "Категории не выбраны"
+msgstr "Categories not selected"
+
+#: .\news\filters.py:29 .\news\templates\flatpages\default.html:42
+msgid "Авторы"
+msgstr "Authors"
+
+#: .\news\filters.py:31 .\news\forms.py:13
+msgid "Авторы не выбраны"
+msgstr "Authors not selected"
+
+#: .\news\forms.py:9
+msgid "Поставьте галочку"
+msgstr "Check the box"
+
+#: .\news\models.py:10
+msgid "author name"
+msgstr "имя автора"
+
+#: .\news\models.py:67
+msgid "category name"
+msgstr "название категории"
+
+#: .\news\templates\authors.html:9
+msgid "Все авторы"
+msgstr "All authors"
+
+#: .\news\templates\authors.html:17 .\news\templates\news_delete.html:10
+msgid "Имя автора"
+msgstr "Author name"
+
+#: .\news\templates\authors.html:21
+msgid "Рейтинг автора"
+msgstr "Author rating"
+
+#: .\news\templates\authors.html:42
+msgid "Авторов нет!"
+msgstr "There are no authors!"
+
+#: .\news\templates\category.html:8
+msgid "Все доступные категории"
+msgstr "All available categories"
+
+#: .\news\templates\category.html:27
+msgid "Категорий нет!"
+msgstr "There are no categories!"
+
+#: .\news\templates\flatpages\default.html:26
+msgid "Новостной портал"
+msgstr "News Portal"
+
+#: .\news\templates\flatpages\default.html:45
+msgid "Новости"
+msgstr "News"
+
+#: .\news\templates\flatpages\default.html:48 .\news\templates\news1.html:51
+#: .\news\templates\news_delete.html:18 .\news\templates\news_search.html:31
+msgid "Категория"
+msgstr "Сategory"
+
+#: .\news\templates\flatpages\default.html:51
+msgid "Макдак"
+msgstr "McDonalds"
+
+#: .\news\templates\flatpages\default.html:57
+msgid "Записаться на приём"
+msgstr "Make an appointment"
+
+#: .\news\templates\flatpages\default.html:60
+#: .\templates\protect\index.html:29
+msgid "Выйти"
+msgstr "Log off"
+
+#: .\news\templates\flatpages\default.html:63
+msgid "Поиск"
+msgstr "Search"
+
+#: .\news\templates\flatpages\default.html:105
+msgid ""
+"2022 Частичное или полное копирование информации с данного сайта для "
+"распространения на других ресурсах, в том числе и бумажных, строго запрещено"
+msgstr ""
+"2022 Partial or complete copying of information from this site for "
+"distribution on other resources, including paper ones, is strictly prohibited"
+
+#: .\news\templates\index.html:29
+msgid "Check out my new cool translation"
+msgstr ""
+
+#: .\news\templates\news1.html:17
+msgid "Все новости"
+msgstr "All News"
+
+#: .\news\templates\news1.html:45 .\news\templates\news_detail.html:18
+#: .\news\templates\news_search.html:26 .\templates\protect\index.html:20
+msgid "Автор"
+msgstr "Author"
+
+#: .\news\templates\news1.html:56 .\news\templates\news_delete.html:22
+#: .\news\templates\news_search.html:35
+msgid "Статья"
+msgstr "Article"
+
+#: .\news\templates\news1.html:62 .\news\templates\news_search.html:39
+msgid "Дата"
+msgstr "Date"
+
+#: .\news\templates\news1.html:67 .\news\templates\news_search.html:43
+msgid "Рейтинг"
+msgstr "Rating"
+
+#: .\news\templates\news1.html:101 .\news\templates\news_search.html:70
+msgid "Читать статью"
+msgstr "Read article"
+
+#: .\news\templates\news1.html:116 .\news\templates\news_search.html:85
+msgid "Такой новости нет"
+msgstr "No such news"
+
+#: .\news\templates\news1.html:120
+msgid "Добавить новость"
+msgstr "Add news"
+
+#: .\news\templates\news1.html:126 .\news\templates\news_search.html:94
+msgid "Начало"
+msgstr "Start"
+
+#: .\news\templates\news1.html:142 .\news\templates\news_search.html:110
+msgid "Конец"
+msgstr "End"
+
+#: .\news\templates\news_create.html:6
+msgid "Создать новость или статью"
+msgstr "Create news or article"
+
+#: .\news\templates\news_create.html:12
+msgid "Создать"
+msgstr "Create"
+
+#: .\news\templates\news_delete.html:6
+msgid "Вы действительно хотите удалить новость"
+msgstr "Are you sure you want to delete the post"
+
+#: .\news\templates\news_delete.html:14
+msgid "Рейтинг новости"
+msgstr "News rating"
+
+#: .\news\templates\news_delete.html:27
+msgid "Дата публикации"
+msgstr "Publication date"
+
+#: .\news\templates\news_delete.html:49 .\news\templates\news_detail.html:40
+msgid "Удалить"
+msgstr "Delete"
+
+#: .\news\templates\news_detail.html:21
+msgid "Рейтинг статьи"
+msgstr "Article rating"
+
+#: .\news\templates\news_detail.html:27
+msgid "Подписка"
+msgstr "Subscribe"
+
+#: .\news\templates\news_detail.html:32
+msgid "Отписка"
+msgstr "Unsubscribe"
+
+#: .\news\templates\news_detail.html:38
+msgid "Редактировать"
+msgstr "Edit"
+
+#: .\news\templates\news_detail.html:43
+msgid "Здесь могла бы быть Ваша реклама"
+msgstr "Your ad can be here"
+
+#: .\news\templates\news_search.html:9
+msgid "Поиск новостей"
+msgstr "News Search"
+
+#: .\templates\main.html:7
+msgid "Страница пользователя"
+msgstr "User page"
+
+#: .\templates\protect\index.html:20
+msgid "Пользователь"
+msgstr "User"
+
+#: .\templates\protect\index.html:20
+msgid "статус"
+msgstr "status"
+
+#: .\templates\protect\index.html:23
+msgid "Страница авторизованного пользователя"
+msgstr "Authorized User Page"
+
+#: .\templates\protect\index.html:25
+msgid "Добро пожаловать"
+msgstr "Welcome"
+
+#: .\templates\protect\index.html:25
+msgid "на новостной портал"
+msgstr "to the news portal"
+
+#: .\templates\protect\index.html:35
+msgid "Хочу стать автором"
+msgstr "I want to become an author"
+
+#: .\templates\protect\index.html:38
+msgid "Хочу стать пользователем"
+msgstr "I want to become a user"
